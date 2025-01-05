@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppFluentAp"
         mc:Ignorable="d"
-        Title="WindowEdit" Height="450" Width="800">
+        Title="WindowEdit" Height="450" Width="800" Loaded="Window_Loaded">
 <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -30,6 +30,8 @@
             <Button Content="Delete row" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="100"  
             Click="Button_DeleteRow_Click" Grid.Row="0" Margin="75,0,0,0"  Grid.Column="2"/>
 
+            <Button Content="Back" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="100"  
+               Grid.Row="0" Margin="75,0,0,0"  Grid.Column="2" Click="Button_Click" />
         </StackPanel>
     </Grid>
 </Window>

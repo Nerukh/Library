@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppFluentAp"
         mc:Ignorable="d"
-        Title="RightsEdit" Height="450" Width="800">
+        Title="RightsEdit" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="199" />
@@ -34,7 +37,7 @@
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="+   " FontSize="15" VerticalAlignment="Center"   Visibility="{Binding IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                            <TextBlock Text="+   " FontSize="15" VerticalAlignment="Center"   Visibility="{Binding IsChecked, Converter={StaticResource boolToVisibilityConverter}}"/>
 
                             <TextBlock Text="{Binding Role.Name}" />
                         </StackPanel>

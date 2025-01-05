@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WpfAppFluentAp
 {
-    public class NotifyPropertyChanged
+    public class NotifyPropertyChanged : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

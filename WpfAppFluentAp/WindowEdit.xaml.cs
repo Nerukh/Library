@@ -1,5 +1,5 @@
 ﻿using Cafe.Model;
-using Login_to_the_program__Admin__User_;
+using WpfAppFluentAp;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -128,6 +128,13 @@ namespace WpfAppFluentAp
             {
                 e.Cancel = true; 
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMenu adminMenu = new AdminMenu();
+            this.Close();
+            adminMenu.ShowDialog();
         }
     }
 }

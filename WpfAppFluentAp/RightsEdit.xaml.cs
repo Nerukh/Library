@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Cafe.Model;
-using Login_to_the_program__Admin__User_;
+using WpfAppFluentAp;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace WpfAppFluentAp
@@ -24,7 +24,7 @@ namespace WpfAppFluentAp
     public partial class RightsEdit : Window
     {
         public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>();
-        public int SelectedObjectId { get; set; } = -1;
+        public int SelectedObjectId { get; set; } = 0;
 
         public RightsEdit()
         {

@@ -1,4 +1,4 @@
-﻿using Login_to_the_program__Admin__User_;
+﻿using Cafe.Model;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
@@ -15,16 +15,17 @@ namespace WpfAppFluentAp
 {
     public partial class MainWindow : Window
     {
-        public int attempts { get; set; } = 5;
+        public int attempts { get; set; } = 3;
         public ICommand commandToJoin { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
-            commandToJoin = new RelayCommand(Join);
+            commandToJoin = new RelayCommand(Sign);
         }
 
-        public void Join()
+
+        public void Sign()
         {
             string username = UsernameTextBox.Text;
             string password = PasswordTextBox.Text;
@@ -41,27 +42,27 @@ namespace WpfAppFluentAp
 
                     if (userRoles.Any(roleId => roleId == 1))
                     {
-                        AdminMenu starterMenu = new AdminMenu(); 
+                        AdminMenu starterMenu = new AdminMenu(); //Якщо адмін => виконається цей фрагмент коду
                         this.Close();
-                        attempts = 5;
+                        attempts = 3;
 
                         starterMenu.ShowDialog();
                     }
                     else
                     {
-                        Application.Current.Shutdown();
-                                                       
+                        Application.Current.Shutdown(); // Якщо він не адмін, він не має можливості змінювати дані
+                                                        // (у нашому випадку, тестовому, просто не відкриваємо йому вікно з доступом)
                     }
                 }
                 else
                 {
-                   
+                    // Невдача у вході
                     if (attempts <= 0)
                     {
                         Application.Current.Shutdown();
                     }
                     ErrorTextBlock.Visibility = Visibility.Visible;
-                    ErrorTextBlock.Text = $"The login or password is entered incorrectly, please try again. There are still attempts: {attempts}";
+                    ErrorTextBlock.Text = $"Invalid login. Attempts left: {attempts}";
                     attempts--;
                 }
             }

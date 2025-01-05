@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Margin="10">
             <Button Name="editingDataUsersButton" Content="Editing data users"  Margin="0,40,0,0" Click="editingDataUsersButton_Click"/>
-            <Button Name="rightsEditorButton"   Content="Rights editor "  Margin="0,20,0,0"  />
+            <Button Name="rightsEditorButton"   Content="Rights editor "  Margin="0,20,0,0" Click="rightsEditorButton_Click"  />
         </StackPanel>
     </Grid>
 </Window>

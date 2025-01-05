@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Cafe.Model;
 
-namespace Login_to_the_program__Admin__User_
+namespace WpfAppFluentAp
 {
     internal class CafeDbContext : DbContext
     {
@@ -21,12 +21,12 @@ namespace Login_to_the_program__Admin__User_
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite("DataSource=C:/Users/t3809/Downloads/N22-master/cafe.db");
+            optionsBuilder.UseSqlite("DataSource=C:\\Users\\t3809\\Downloads\\N22-master\\cafe.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            
 
             modelBuilder.Entity<Role>().HasData(new Role[] {
                new Role { Id=Cafe.Model.Role.Admin.Id, Name=Cafe.Model.Role.Admin.Name },

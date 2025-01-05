@@ -24,14 +24,16 @@ namespace WpfAppFluentAp
         private void editingDataUsersButton_Click(object sender, RoutedEventArgs e)
         {
             WindowEdit windowedit = new WindowEdit();
+            this.Close();
             windowedit.ShowDialog();
         }
 
-        //private void rightsEditorButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    RightsEditWindow rightsEditWindow = new RightsEditWindow();
-        //    rightsEditWindow.ShowDialog();
-        //}
+        private void rightsEditorButton_Click(object sender, RoutedEventArgs e)
+        {
+            RightsEdit rightsEditWindow = new RightsEdit();
+            this.Close();
+            rightsEditWindow.ShowDialog();
+        }
 
     }
 }
